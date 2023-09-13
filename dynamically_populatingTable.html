@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="generateTable()">Generate Table</button>
+    <div id="table-data"></div>
+    <script>
+      var studentlist = [
+        {
+          name: "Ishan",
+          age: 20,
+        },
+        {
+          name: "naresh",
+          age: 21,
+        },
+        {
+          name: "dibesh",
+          age: 20,
+        },
+      ];
+      function generateTable() {
+        let data = `<table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            `;
+        studentlist.forEach((student) => {
+          data =
+            data + `<tr><td>${student.name}</td><td>${student.age}</td></tr>`;
+        });
+        data = data + `</table>`;
+        document.getElementById("table-data").innerHTML = data;
+      }
+    </script>
+  </body>
+</html>
